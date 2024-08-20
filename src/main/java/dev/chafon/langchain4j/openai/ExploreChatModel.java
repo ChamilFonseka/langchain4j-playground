@@ -5,7 +5,7 @@ import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 
-public class ExploreOpenAIChatModel {
+public class ExploreChatModel {
     public static void main(String[] args) {
         String apiKey = System.getenv("OPENAI_API_KEY");
         OpenAiChatModel model = OpenAiChatModel.withApiKey(apiKey);

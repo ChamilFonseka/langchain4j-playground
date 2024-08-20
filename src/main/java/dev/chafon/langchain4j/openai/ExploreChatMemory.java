@@ -9,7 +9,7 @@ import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.UserMessage;
 
-public class ExploreOpenAIChatMemory {
+public class ExploreChatMemory {
 
     public static void main(String[] args) {
         String apiKey = System.getenv("OPENAI_API_KEY");
@@ -20,10 +20,10 @@ public class ExploreOpenAIChatMemory {
 
         withConversationalChain(model, chatMemory);
         withAiServices(model, chatMemory);
-        withAiServicesWithMemoryId(model, chatMemory);
+        withAiServicesWithMemoryId(model);
     }
 
-    private static void withAiServicesWithMemoryId(OpenAiChatModel model, ChatMemory chatMemory) {
+    private static void withAiServicesWithMemoryId(OpenAiChatModel model) {
         AssistantWithMemoryId assistant = AiServices.builder(AssistantWithMemoryId.class)
                 .chatLanguageModel(model)
                 .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(10))
